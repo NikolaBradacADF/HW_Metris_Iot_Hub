@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="ST_AI_StandardChannel" Id="{c1df7d60-ffd3-4ead-894b-68fa3fa7705f}">
+    <Declaration><![CDATA[TYPE ST_AI_StandardChannel :
+STRUCT
+	Status AT %I* : INT;		// channel status
+	Raw AT %I*   : INT;			// raw value
+	Val : REAL;					// scaled value
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

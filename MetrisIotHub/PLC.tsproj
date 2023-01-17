@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.32">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{D1E0B26D-990A-46A1-AA75-E3C9080B5A9C}" PersistentType="true">AlarmClass</Name>
+			<DisplayName TxtId=""><![CDATA[AlarmClass]]></DisplayName>
+			<EventId>
+				<Name Id="1">ALARM</Name>
+				<DisplayName TxtId=""><![CDATA[ID = {0} / {1} /  {2}]]></DisplayName>
+				<Severity>Error</Severity>
+			</EventId>
+			<Hides>
+				<Hide GUID="{CB9EBA1C-9940-4218-8964-ADDFE59E5BA5}"/>
+				<Hide GUID="{8AD44E0B-B80C-4046-A8DF-98B0299C7FF8}"/>
+				<Hide GUID="{E1B59C5C-E947-43FB-97FD-45091052E23C}"/>
+				<Hide GUID="{43F3FC17-FFF1-4F0C-9ACF-20E6456CB399}"/>
+				<Hide GUID="{DBCCC4E0-EEC6-448C-BA4E-9D1B6DCB8D45}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{1187878F-220C-416E-8142-3F6CB7F91723}" PersistentType="true">WarningClass</Name>
+			<DisplayName TxtId=""><![CDATA[WarningClass]]></DisplayName>
+			<EventId>
+				<Name Id="1">WARNING</Name>
+				<DisplayName TxtId=""><![CDATA[ID = {0} / {1} / {2}]]></DisplayName>
+				<Severity>Warning</Severity>
+			</EventId>
+			<Hides>
+				<Hide GUID="{608E4846-BC17-49FB-BAF6-DDA7728EAA0A}"/>
+				<Hide GUID="{BB07FC88-16FE-4892-B294-D2181177F191}"/>
+				<Hide GUID="{53486621-8295-4C71-B306-2672D00E7A07}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{0D9F0D79-8363-4D25-9A4F-DFA52D8A4455}" PersistentType="true">System</Name>
+			<DisplayName TxtId=""><![CDATA[System]]></DisplayName>
+			<EventId>
+				<Name Id="1">ALARM</Name>
+				<DisplayName TxtId=""><![CDATA[ID = {0} / {1} / {2}]]></DisplayName>
+				<Severity>Error</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="2">WARNING</Name>
+				<DisplayName TxtId=""><![CDATA[ID = {0} / {1} / {2}]]></DisplayName>
+				<Severity>Warning</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="3">INFO</Name>
+				<DisplayName TxtId=""><![CDATA[ID = {0} / {1} / {2}]]></DisplayName>
+				<Severity>Info</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="4">VERBOSE</Name>
+				<DisplayName TxtId=""><![CDATA[ID = {0} / {1} / {2}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<Hides>
+				<Hide GUID="{3A9DA548-97C1-4E8C-B0DC-118BB5747727}"/>
+			</Hides>
+		</DataType>
+	</DataTypes>
+	<Project ProjectGUID="{548F21A5-285F-4352-81C1-0C1B77BA8968}" Target64Bit="true" AutoPrioManagement="true" ShowHideConfigurations="#x3c7">
+		<System>
+			<Settings MaxCpus="4">
+				<IoIdleTask Priority="6"/>
+			</Settings>
+			<Licenses>
+				<Target>
+					<ManualSelect>{796D380F-D49E-4C0C-A05F-500052FAC883}</ManualSelect>
+				</Target>
+			</Licenses>
+			<Tasks>
+				<Task Id="3" Priority="8" CycleTime="100000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask_10ms</Name>
+				</Task>
+				<Task Id="4" Priority="4" CycleTime="10000" AmsPort="351" AdtTasks="true">
+					<Name>PlcTask_1ms</Name>
+				</Task>
+				<Task Id="5" Priority="10" CycleTime="1000000" AmsPort="352" AdtTasks="true">
+					<Name>PlcTask_100ms</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project File="MetrisIotHub.xti"/>
+		</Plc>
+		<Io>
+			<Device File="Device 1 (EtherCAT).xti" Id="1"/>
+		</Io>
+	</Project>
+</TcSmProject>

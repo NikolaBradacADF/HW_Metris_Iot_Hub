@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="ST_AIos_Channel" Id="{7c51e337-344b-4e66-9eca-a24f4bffa47d}">
+    <Declaration><![CDATA[TYPE ST_AIos_Channel :
+STRUCT
+	Status AT %I*   : INT;		// channel status
+	Raw AT %I*  : ARRAY[0..(IO._AIOS_NO_CHANNEL_PER_INPUT - 1)] OF INT;			// raw value
+	Val : ARRAY[0..(IO._AIOS_NO_CHANNEL_PER_INPUT - 1)] OF REAL;				// scaled value
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

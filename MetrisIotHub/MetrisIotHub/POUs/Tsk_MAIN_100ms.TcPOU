@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="Tsk_MAIN_100ms" Id="{d6ce8310-54f1-40dd-b9d4-1f5bec6d6d10}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Tsk_MAIN_100ms
+VAR
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
