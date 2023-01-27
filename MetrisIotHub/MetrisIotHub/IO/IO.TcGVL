@@ -22,7 +22,7 @@ VAR_GLOBAL CONSTANT
 	_DI_NO_INPUTS : UDINT := 10;						// number of physical input	
 
 	// Standard DQ configuration
-	_DQ_NO_INPUTS : UDINT := 10;						// number of physical output	
+	_DQ_NO_OUTPUTS : UDINT := 10;						// number of physical output	
 
 	
 	_AIOS_NO_INPUTS	: UDINT := 3;						// number of physical input 
@@ -43,7 +43,7 @@ VAR_GLOBAL
 	
 	DI AT %I* : ARRAY[0..(_DI_NO_INPUTS)] OF ST_DI_StandardChannel;
 
-	DQ AT %Q* : ARRAY[0..(_DQ_NO_INPUTS)] OF BOOL;
+	DQ AT %Q* : ARRAY[0..(_DQ_NO_OUTPUTS)] OF BOOL;
 
 	
 END_VAR]]></Declaration>
