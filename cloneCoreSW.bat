@@ -15,4 +15,4 @@ copy %CD%\.temp\MetrisIotHub\MetrisIotHub\MetrisIotHub.plcproj %CD%\MetrisIotHub
 
 
 
-pausese
+pause
