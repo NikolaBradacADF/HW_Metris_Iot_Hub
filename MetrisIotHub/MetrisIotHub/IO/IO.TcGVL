@@ -36,15 +36,17 @@ END_VAR
 
 {attribute 'qualified_only'}
 VAR_GLOBAL
-
+	{attribute 'TcContextId':='0'}
 	AIOS : ARRAY[0..(_AIOS_NO_INPUTS)] OF  ST_AIOS_Channel;
 	
+	{attribute 'TcContextId':='0'}
 	AI : ARRAY[0..(_AI_NO_INPUTS)] OF ST_AI_StandardChannel;
 	
+	{attribute 'TcContextId':='0'}
 	DI AT %I* : ARRAY[0..(_DI_NO_INPUTS)] OF ST_DI_StandardChannel;
 
+	{attribute 'TcContextId':='0'}
 	DQ AT %Q* : ARRAY[0..(_DQ_NO_OUTPUTS)] OF BOOL;
-
 	
 END_VAR]]></Declaration>
   </GVL>
