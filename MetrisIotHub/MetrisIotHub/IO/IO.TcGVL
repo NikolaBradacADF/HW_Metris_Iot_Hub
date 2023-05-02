@@ -4,6 +4,8 @@
     <Declaration><![CDATA[{attribute 'global_init_slot' := '40500'}
 
 // INPUT DESIGNATION:
+// channel numbering 1 .. N  (0-not used)
+
 // - DI - digital input
 //		- mapping to MAIN task
 
@@ -11,25 +13,25 @@
 //		- mapping to MAIN task 
 
 // - AIOS - analog input with oversampling
-//		- mapping to MAIN_HS task with 1ms cycle time 
+//		- mapping to task with 1ms cycle time 
 //		- recorded into FiFo buffer to be handled by slow task
 
 VAR_GLOBAL CONSTANT
 	// Standard AI configuration
-	_AI_NO_INPUTS : UDINT := 10;						// number of physical input	
+	_AI_NO_INPUTS : UDINT := 0;						// number of physical input	
 
 	// Standard DI configuration
-	_DI_NO_INPUTS : UDINT := 10;						// number of physical input	
+	_DI_NO_INPUTS : UDINT := 0;						// number of physical input	
 
 	// Standard DQ configuration
-	_DQ_NO_OUTPUTS : UDINT := 10;						// number of physical output	
+	_DQ_NO_OUTPUTS : UDINT := 0;					// number of physical output	
 
-	
-	_AIOS_NO_INPUTS	: UDINT := 3;						// number of physical input 
-	_AIOS_NO_CHANNEL_PER_INPUT : UDINT := 50;			// Number of channels for single input, oversampling factor 10 - 50
-	
-	// Max number of samples
-	_AIOS_SAMPLE_RATE : UDINT := _AIOS_NO_CHANNEL_PER_INPUT * 1000;			// Number of sampoles per sec := Oversampling * HS cycle per sec
+
+	// AIOS configuration	
+	_AIOS_NO_INPUTS				: UDINT := 4;									// number of physical input 
+	_AIOS_NO_CHANNEL_PER_INPUT 	: UDINT := 50;									// Number of channels for single input, oversampling factor 10 - 50
+	_AIOS_SAMPLE_RATE 			: UDINT := _AIOS_NO_CHANNEL_PER_INPUT * 1000;	// use max possible sample rate
+	_AIOS_MAX_NO_SAMPLE 		: UDINT := 65536;								// Max number of samples, 50ks/s - >1sec record on full sample rate	
 	
 END_VAR
 
@@ -43,10 +45,11 @@ VAR_GLOBAL
 	AI : ARRAY[0..(_AI_NO_INPUTS)] OF ST_AI_StandardChannel;
 	
 	{attribute 'TcContextId':='0'}
-	DI AT %I* : ARRAY[0..(_DI_NO_INPUTS)] OF ST_DI_StandardChannel;
+	//DI AT %I* : ARRAY[0..(_DI_NO_INPUTS)] OF ST_DI_StandardChannel;
 
 	{attribute 'TcContextId':='0'}
-	DQ AT %Q* : ARRAY[0..(_DQ_NO_OUTPUTS)] OF BOOL;
+	//DQ AT %Q* : ARRAY[0..(_DQ_NO_OUTPUTS)] OF BOOL;
+
 	
 END_VAR]]></Declaration>
   </GVL>

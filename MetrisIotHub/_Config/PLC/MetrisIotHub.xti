@@ -10,47 +10,13 @@
 				<Elements>50</Elements>
 			</ArrayInfo>
 		</DataType>
-		<DataType>
-			<Name GUID="{9DC40B0A-917D-6765-5466-0BD7EB7E4401}" AutoDeleteType="true">ST_DI_StandardChannel</Name>
-			<BitSize>32</BitSize>
-			<SubItem>
-				<Name>Status</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
-				<BitSize>16</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>Value</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
-				<BitSize>16</BitSize>
-				<BitOffs>16</BitOffs>
-			</SubItem>
-		</DataType>
-		<DataType>
-			<Name GUID="{88490305-0E40-A8DB-7C1A-E677400E387E}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..10] OF ST_DI_StandardChannel</Name>
-			<BitSize>352</BitSize>
-			<BaseType GUID="{9DC40B0A-917D-6765-5466-0BD7EB7E4401}">ST_DI_StandardChannel</BaseType>
-			<ArrayInfo>
-				<LBound>0</LBound>
-				<Elements>11</Elements>
-			</ArrayInfo>
-		</DataType>
-		<DataType>
-			<Name GUID="{7A165F81-5703-EC71-D065-B8582C2A4000}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..10] OF BOOL</Name>
-			<BitSize>88</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-			<ArrayInfo>
-				<LBound>0</LBound>
-				<Elements>11</Elements>
-			</ArrayInfo>
-		</DataType>
 	</DataTypes>
 	<Project GUID="{60CA730D-54CC-4F2F-996F-A968853F4CF1}" Name="MetrisIotHub" PrjFilePath="..\..\MetrisIotHub\MetrisIotHub.plcproj" TmcFilePath="..\..\MetrisIotHub\MetrisIotHub.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" CopyTmcToTarget="true" CopyTpyToTarget="false" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="MetrisIotHub\MetrisIotHub.tmc" TmcHash="{4C42024C-C259-60D9-9731-FEA32F34C3AA}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="MetrisIotHub\MetrisIotHub.tmc" TmcHash="{C88B7848-A36C-87BB-30FF-0C9113C2F254}">
 			<Name>MetrisIotHub Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
-			<Vars VarGrpType="1" ContextId="2" AreaNo="32">
-				<Name>PlcTask_100ms Inputs</Name>
+			<Vars VarGrpType="1">
+				<Name>PlcTask_1ms Inputs</Name>
 				<Var>
 					<Name>IO.AIOS[0].Status</Name>
 					<Comment><![CDATA[ channel status]]></Comment>
@@ -92,6 +58,16 @@
 					<Type GUID="{A75E9389-6482-D33E-FA44-EDFDDA695D96}">ARRAY [0..49] OF INT</Type>
 				</Var>
 				<Var>
+					<Name>IO.AIOS[4].Status</Name>
+					<Comment><![CDATA[ channel status]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>IO.AIOS[4].Raw</Name>
+					<Comment><![CDATA[ raw value]]></Comment>
+					<Type GUID="{A75E9389-6482-D33E-FA44-EDFDDA695D96}">ARRAY [0..49] OF INT</Type>
+				</Var>
+				<Var>
 					<Name>IO.AI[0].Status</Name>
 					<Comment><![CDATA[ channel status]]></Comment>
 					<Type>INT</Type>
@@ -100,117 +76,6 @@
 					<Name>IO.AI[0].Raw</Name>
 					<Comment><![CDATA[ raw value]]></Comment>
 					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[1].Status</Name>
-					<Comment><![CDATA[ channel status]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[1].Raw</Name>
-					<Comment><![CDATA[ raw value]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[2].Status</Name>
-					<Comment><![CDATA[ channel status]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[2].Raw</Name>
-					<Comment><![CDATA[ raw value]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[3].Status</Name>
-					<Comment><![CDATA[ channel status]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[3].Raw</Name>
-					<Comment><![CDATA[ raw value]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[4].Status</Name>
-					<Comment><![CDATA[ channel status]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[4].Raw</Name>
-					<Comment><![CDATA[ raw value]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[5].Status</Name>
-					<Comment><![CDATA[ channel status]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[5].Raw</Name>
-					<Comment><![CDATA[ raw value]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[6].Status</Name>
-					<Comment><![CDATA[ channel status]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[6].Raw</Name>
-					<Comment><![CDATA[ raw value]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[7].Status</Name>
-					<Comment><![CDATA[ channel status]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[7].Raw</Name>
-					<Comment><![CDATA[ raw value]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[8].Status</Name>
-					<Comment><![CDATA[ channel status]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[8].Raw</Name>
-					<Comment><![CDATA[ raw value]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[9].Status</Name>
-					<Comment><![CDATA[ channel status]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[9].Raw</Name>
-					<Comment><![CDATA[ raw value]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[10].Status</Name>
-					<Comment><![CDATA[ channel status]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.AI[10].Raw</Name>
-					<Comment><![CDATA[ raw value]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>IO.DI</Name>
-					<Type GUID="{88490305-0E40-A8DB-7C1A-E677400E387E}">ARRAY [0..10] OF ST_DI_StandardChannel</Type>
-				</Var>
-			</Vars>
-			<Vars VarGrpType="2" ContextId="2" AreaNo="33">
-				<Name>PlcTask_100ms Outputs</Name>
-				<Var>
-					<Name>IO.DQ</Name>
-					<Type GUID="{7A165F81-5703-EC71-D065-B8582C2A4000}">ARRAY [0..10] OF BOOL</Type>
 				</Var>
 			</Vars>
 			<Contexts>
@@ -249,63 +114,4 @@
 			</TaskPouOids>
 		</Instance>
 	</Project>
-	<Mappings>
-		<OwnerA Name="MetrisIotHub Instance">
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 2 (EL3632)">
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[2].Raw[0]" VarB="Ch1 Sample 0^Ch1 Value"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EL3702)">
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[0]" VarB="Ch1 Sample 0^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[10]" VarB="Ch1 Sample 10^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[11]" VarB="Ch1 Sample 11^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[12]" VarB="Ch1 Sample 12^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[13]" VarB="Ch1 Sample 13^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[14]" VarB="Ch1 Sample 14^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[15]" VarB="Ch1 Sample 15^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[16]" VarB="Ch1 Sample 16^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[17]" VarB="Ch1 Sample 17^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[18]" VarB="Ch1 Sample 18^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[19]" VarB="Ch1 Sample 19^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[1]" VarB="Ch1 Sample 1^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[20]" VarB="Ch1 Sample 20^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[21]" VarB="Ch1 Sample 21^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[22]" VarB="Ch1 Sample 22^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[23]" VarB="Ch1 Sample 23^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[24]" VarB="Ch1 Sample 24^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[25]" VarB="Ch1 Sample 25^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[26]" VarB="Ch1 Sample 26^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[27]" VarB="Ch1 Sample 27^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[28]" VarB="Ch1 Sample 28^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[29]" VarB="Ch1 Sample 29^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[2]" VarB="Ch1 Sample 2^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[30]" VarB="Ch1 Sample 30^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[31]" VarB="Ch1 Sample 31^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[32]" VarB="Ch1 Sample 32^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[33]" VarB="Ch1 Sample 33^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[34]" VarB="Ch1 Sample 34^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[35]" VarB="Ch1 Sample 35^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[36]" VarB="Ch1 Sample 36^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[37]" VarB="Ch1 Sample 37^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[38]" VarB="Ch1 Sample 38^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[39]" VarB="Ch1 Sample 39^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[3]" VarB="Ch1 Sample 3^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[40]" VarB="Ch1 Sample 40^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[41]" VarB="Ch1 Sample 41^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[42]" VarB="Ch1 Sample 42^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[43]" VarB="Ch1 Sample 43^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[44]" VarB="Ch1 Sample 44^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[45]" VarB="Ch1 Sample 45^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[46]" VarB="Ch1 Sample 46^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[47]" VarB="Ch1 Sample 47^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[48]" VarB="Ch1 Sample 48^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[49]" VarB="Ch1 Sample 49^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[4]" VarB="Ch1 Sample 4^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[5]" VarB="Ch1 Sample 5^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[6]" VarB="Ch1 Sample 6^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[7]" VarB="Ch1 Sample 7^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[8]" VarB="Ch1 Sample 8^Ch1 Value"/>
-				<Link VarA="PlcTask_100ms Inputs^IO.AIOS[0].Raw[9]" VarB="Ch1 Sample 9^Ch1 Value"/>
-			</OwnerB>
-		</OwnerA>
-	</Mappings>
 </TcSmItem>
