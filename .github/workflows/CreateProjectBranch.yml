@@ -1,0 +1,50 @@
+# This is a basic workflow that is manually triggered
+
+name: Create new project branch
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      Project_Name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Project Name'
+        # Default value if no value is explicitly provided
+        default: 'Project Name'
+        # Input has to be provided for the workflow to run
+        required: true
+        # The data type of the input
+        type: string
+      Project_Number:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Project Number'
+        # Default value if no value is explicitly provided
+        default: 'Project Number'
+        # Input has to be provided for the workflow to run
+        required: true
+        # The data type of the input
+        type: string
+      Mounting_location:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Mounting location'
+        # Default value if no value is explicitly provided
+        default: 'Mounting location'
+        # Input has to be provided for the workflow to run
+        required: true
+        # The data type of the input
+        type: string
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  greet:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - name: Send greeting
+      run: echo "Hello ${{ inputs.Project_Name }} ${{ inputs.Project_Number }} ${{ inputs.Mounting_location }}"
